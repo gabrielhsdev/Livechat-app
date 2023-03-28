@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Box, Text, Grid, GridItem } from '@chakra-ui/react'
 import { useState, useEffect } from "react";
 import useWindowSize from '../../../hooks/useWindowSize'
-import Messageboard_sidebar from './Messageboard_sidebar';
+import Messageboard_sidebar from './Sidebar_contact/Messageboard_sidebar';
 import Messageboard_body from './Body/Messageboard_body';
 
 function Messageboard() {
@@ -45,7 +45,7 @@ function Messageboard() {
                     <Messageboard_sidebar />
                 </GridItem>
                 }
-                <GridItem colSpan={sidebar} minW='100%' h='100%' overflow='auto' >
+                <GridItem colSpan={sidebar} minW='100%' h='100%' overflow='auto' p={1}>
                     <Messageboard_body />
                 </GridItem>
             </Grid>
