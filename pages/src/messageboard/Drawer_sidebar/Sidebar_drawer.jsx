@@ -39,7 +39,7 @@ function Sidebar_drawer() {
     <DrawerOverlay />
         <DrawerContent>
 
-            <DrawerHeader>
+            <DrawerHeader h='100px'>
                 <Sidebar_drawer_header />
             </DrawerHeader>
 

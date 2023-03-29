@@ -8,7 +8,7 @@ import Messageboard_body_input from './Messageboard_body_input'
 function Messageboard_body() {
   return (
     <Box className='all100'>
-      <VStack divider={<StackDivider borderColor='gray.200' />} spacing={1} align='stretch' className='all100' >
+      <VStack divider={<StackDivider borderColor='gray.200' />} spacing={3} align='stretch' className='all100' >
 
         <Box  h='5%' maxH='25%'>
           <Messageboard_body_header />

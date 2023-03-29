@@ -10,10 +10,10 @@ function Register_main() {
                 <Stack spacing='4'>
                     <Box>
                         <Heading size='lg' textTransform='uppercase'>
-                        Login
+                        Sign Up
                         </Heading>
                         <Text pt='2' fontSize='sm'>
-                        Login to GaChat
+                        Register to GaChat
                         </Text>
                     </Box>
                     <Box>
@@ -22,16 +22,24 @@ function Register_main() {
                     <Box>
                         <Input variant='filled' placeholder='Password...' />
                     </Box>
+                    <Box>
+                        <Input type='file' hidden id='inputFile' variant='filled' placeholder='Password...' />
+                        <label for='inputFile'>
+                        <Box bgColor='#edf2f7' p='2' textAlign='center' rounded='md' color='#718096'>
+                            Add profile picture...
+                        </Box>
+                        </label>
+                    </Box>
                     <Box h='20%'>
                         <Flex justifyContent='center'>
                             <Center p={2}>
                                 <Button colorScheme='facebook' variant='solid'>
-                                    Login
+                                    Sing Up
                                 </Button>
                             </Center>
                             <Center p={2}>
                                 <Button colorScheme='gray' variant='solid'>
-                                    Sign Up
+                                    Login
                                 </Button>
                             </Center>
                         </Flex>
