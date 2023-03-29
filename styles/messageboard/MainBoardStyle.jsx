@@ -56,7 +56,6 @@ const messageboard_class = extendTheme({
       },
       ".messageboard_body_header_btn": {
         colorScheme:'gray', 
-        size:'sm' ,
         mr:'2',
       },
       ".messageboard_body": {
@@ -64,6 +63,20 @@ const messageboard_class = extendTheme({
         h:'100%' ,
         overflow:'auto',
         p:'1',
+      },
+      ".login_main_board": {
+        bgColor:'brand.50',
+        w:{base:'80%', sm: '80%', md: '60%', lg:'50%', xl:'30%' },
+        h:{ base:'100%', sm: '100%', md: '32%', lg:'32%', xl:'32%' },
+        rounded:'md'
+      },
+      ".register_main_board_card": {
+        textAlign:"center",
+        display:"flex",
+        alignItems:"center",
+        flexDirection:"column",
+        justifyContent:"center",
+        height:"100%"
       },
       ".all100": {
         h:'100%', w:'100%', minH:'100%', minW:'100%'
