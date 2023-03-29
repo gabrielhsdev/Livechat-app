@@ -4,14 +4,14 @@ import { PhoneIcon, DeleteIcon } from '@chakra-ui/icons'
 
 function Messageboard_body_header() {
   return (
-    <Flex h='100%' w='100%' minH='100%' minW='100%' p={1}>
+    <Flex className='all100' p={1}>
         <Box w='70%' h='100%' display='flex' alignItems='center'>
             <Text fontWeight="bold">Recipient Username...</Text>
         </Box>
             <Spacer />
         <Box w='30%' h='100%' display='flex' alignItems='center' justifyContent='right'>
-                <Button colorScheme='gray' variant='outline' size='sm' mr={2}><PhoneIcon /></Button>
-                <Button colorScheme='gray' variant='outline' size='sm' mr={2}><DeleteIcon /></Button>
+                <Button className='messageboard_body_header_btn' variant='outline' ><PhoneIcon /></Button>
+                <Button className='messageboard_body_header_btn' variant='outline' ><DeleteIcon /></Button>
         </Box>
     </Flex>
   )

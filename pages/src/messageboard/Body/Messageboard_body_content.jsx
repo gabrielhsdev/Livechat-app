@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { Flex, Box, Text, VStack } from '@chakra-ui/react'
 import Messageboard_message from './Messageboard_message'
 
+//Will change later
 const messages = [
   {
       id: 1,
@@ -19,24 +20,16 @@ function Messageboard_body_content() {
 
   //Makes us scroll to the bottom of the message board
   const messagesEndRef = useRef(null)
-
   const scrollToBottom = () => {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
-
   useEffect(() => {
       scrollToBottom()
   }, [messages]);
+  //End of scroll to bottom
 
   return (
-    <VStack
-        spacing={4}
-        align='stretch'
-        maxH='100%'
-        w='100%'
-        minW='100%'
-        p={3}
-        >
+    <VStack className='all100'  align='stretch' p={3} spacing={4} >
           {messages.map(message => <Messageboard_message key={message.id} status={message.status} message={message.message} />)}
           <div ref={messagesEndRef} />
     </VStack>

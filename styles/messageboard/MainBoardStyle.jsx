@@ -25,12 +25,6 @@ const messageboard_class = extendTheme({
         gap:'1',
         bgColor:'brand.50',
       },
-      ".messageboard_body": {
-        minW:'100%',
-        h:'100%' ,
-        overflow:'auto',
-        p:'1',
-      },
       ".default_sidebar": {
         colSpan:'2',
         minW:'100%' ,
@@ -59,6 +53,20 @@ const messageboard_class = extendTheme({
         opacity:'0.8',
         numberOfLines:'1', 
         style:{ width: '100%' }
+      },
+      ".messageboard_body_header_btn": {
+        colorScheme:'gray', 
+        size:'sm' ,
+        mr:'2',
+      },
+      ".messageboard_body": {
+        minW:'100%',
+        h:'100%' ,
+        overflow:'auto',
+        p:'1',
+      },
+      ".all100": {
+        h:'100%', w:'100%', minH:'100%', minW:'100%'
       },
     },
   },
