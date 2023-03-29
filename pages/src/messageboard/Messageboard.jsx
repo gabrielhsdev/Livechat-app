@@ -20,37 +20,19 @@ function Messageboard() {
     //h={{ base:'98%', sm: '98%', md: '80%', lg:'75%', xl:'60%' }} 
 
     return (
-
-    <Box bgColor='brand.50'
-        w={{ base:'98%', sm: '98%', md: '95%', lg:'85%', xl:'60%' }} 
-        h={{ base:'98%', sm: '98%', md: '80%', lg:'75%', xl:'60%' }} 
-        boxShadow='2xl'
-        rounded='md'
-    >
-            <Grid
-            rounded='md'
-            h='100%'
-            w='100%'
-            templateColumns='repeat(8, 1fr)'
-            gap={1}
-            bgColor='brand.50'
-            >
-                {size.width > 768 && 
-                <GridItem 
-                    colSpan={2} 
-                    minW='100%' 
-                    h='100%' 
-                    overflow='auto' 
-                    p={2}>
-                    <Messageboard_sidebar />
-                </GridItem>
-                }
-                <GridItem colSpan={sidebar} minW='100%' h='100%' overflow='auto' p={1}>
-                    <Messageboard_body />
-                </GridItem>
-            </Grid>
-    </Box>
-  )
+        <Box className='main_board'>
+                <Grid templateColumns='repeat(8, 1fr)' className='main_grid'>
+                    {size.width > 768 && 
+                    <GridItem colSpan={2} className='default_sidebar'>
+                        <Messageboard_sidebar />
+                    </GridItem>
+                    }
+                    <GridItem colSpan={sidebar} className='messageboard_body'>
+                        <Messageboard_body />
+                    </GridItem>
+                </Grid>
+        </Box>
+    )
 
 }
 

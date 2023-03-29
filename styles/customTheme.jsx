@@ -1,8 +1,8 @@
-// 1. Import `extendTheme`
 import { extendTheme } from "@chakra-ui/react"
+import messageboard_class from './messageboard/MainBoardStyle'
 
-// 2. Call `extendTheme` and pass your custom values
-const myCustomTheme = extendTheme({
+// Custom theme 1
+const customTheme1 = extendTheme({
   colors: {
     brand: {
         50: "#ffffff",
@@ -15,4 +15,7 @@ const myCustomTheme = extendTheme({
   },
 })
 
-export default myCustomTheme;
+// Merge the themes
+const mergedTheme = extendTheme(customTheme1, messageboard_class);
+
+export default mergedTheme;
