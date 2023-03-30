@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, storage } from '../../firebase_connection/firebase_config_app'
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, set, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getDatabase, ref as refDb, set as setDb } from "firebase/database";
 
 export function submitHandler(e) {
     e.preventDefault(); 
@@ -19,16 +20,21 @@ export function submitHandler(e) {
         const user = userCredential.user; 
 
         // Push image to server
-        const storageRef = ref(storage, 'images/'+userEmail+'.jpg');
+        let imgPath = 'images/user/profile_pictures/'+user.uid+'/profilePicture.jpg';
+        const storageRef = ref(storage, imgPath);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on('state_changed', 
-        (error) => { 
-            //console.log(error); 
-        }, 
+        (snapshot) => {
+            //Do something during upload
+          }, 
+          (error) => {
+            alert('Error uploading image');
+          }, 
         () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                //console.log('File available at', downloadURL);
+                alert('User created successfully');
+                writeUserData(user.uid, userEmail, userEmail, downloadURL);
             });
         }
         );
@@ -40,4 +46,13 @@ export function submitHandler(e) {
         alert(errorCode); 
     });
 }
+
+function writeUserData(userId, name, email, imageUrl) {
+    const db = getDatabase();
+    setDb(refDb(db, 'users/' + userId), {
+      username: name,
+      email: email,
+      profile_picture : imageUrl
+    });
+  }
  

@@ -1,8 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Text, Stack, StackDivider, Heading, Box, Input, Flex, Button, Center } from '@chakra-ui/react'
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, storage } from '../../../firebase_connection/firebase_config_app'
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { Text, Stack, StackDivider, Heading, Box, Input, Flex, Button, Center } from '@chakra-ui/react'
 import { submitHandler } from '../../../firebase_actions/register/register_user'
 
 function Register_main() {
