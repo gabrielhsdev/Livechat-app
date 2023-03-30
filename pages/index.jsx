@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <ChakraProvider theme={mergedTheme}>
       <Flex className='outerboard_class' bgColor='brand.300'>
-        <Messageboard />
+        <Regster_main />
       </Flex>
     </ChakraProvider>
   )
