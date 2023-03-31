@@ -1,12 +1,13 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, storage } from '../../firebase_connection/firebase_config_app'
-import { getStorage, ref, set, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, set, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getDatabase, ref as refDb, set as setDb } from "firebase/database";
 
-export function submitHandler(e) {
+export function submitHandler(e, router) {
     e.preventDefault(); 
-    let userEmail = e.target.username.value;
-    let userPassword = e.target.password.value;
+    let user_email = e.target.email.value;
+    let user_name = e.target.username.value;
+    let user_password = e.target.password.value;
     let file = e.target.picture.files[0];
 
     if(file == null){
@@ -14,7 +15,7 @@ export function submitHandler(e) {
         return;
     }
 
-    createUserWithEmailAndPassword(auth, userEmail, userPassword)
+    createUserWithEmailAndPassword(auth, user_email, user_password)
     .then((userCredential) => { 
         // Signed in
         const user = userCredential.user; 
@@ -34,7 +35,8 @@ export function submitHandler(e) {
         () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 alert('User created successfully');
-                writeUserData(user.uid, userEmail, userEmail, downloadURL);
+                writeUserData(user.uid, user_name, user_email, downloadURL);
+                router.push('/Login_main');
             });
         }
         );
@@ -54,5 +56,6 @@ function writeUserData(userId, name, email, imageUrl) {
       email: email,
       profile_picture : imageUrl
     });
+    setDb(refDb(db, 'chats/' + userId), {});
   }
  
