@@ -46,7 +46,8 @@ const messageboard_class = extendTheme({
       ".default_sidebar_contact_img": {
         borderRadius:'full', 
         height:'100%', 
-        opacity:'0.9'
+        opacity:'0.9',
+        w:'50px',
       },
       ".default_sidebar_contact_message": {
         fontSize:'sm', 

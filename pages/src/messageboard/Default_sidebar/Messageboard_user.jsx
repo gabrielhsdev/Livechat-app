@@ -4,12 +4,13 @@ function Messageboard_user(props) {
 
     let message = props.messageTxt;
     let username = props.username;
+    let imgSource = props.imgSource;
   
     return (
     <Center h='60px'>
         <Flex className='default_sidebar_user_flex' >
             <Box h='100%'>
-                <Image className='default_sidebar_contact_img' src='https://bit.ly/dan-abramov'/>
+                <Image className='default_sidebar_contact_img' src={imgSource} />
             </Box>
             <Center w='70%' h='100%'>
                 <VStack spacing={0} align='stretch' w="100%" m={1} >

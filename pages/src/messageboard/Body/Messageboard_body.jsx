@@ -1,4 +1,4 @@
-import React, { Dimensions } from 'react'
+import React, { useState, useEffect } from 'react';
 
 import { Flex, VStack, StackDivider, Box, Text} from '@chakra-ui/react'
 import Messageboard_body_header from './Messageboard_body_header'
@@ -6,6 +6,9 @@ import Messageboard_body_content from './Messageboard_body_content'
 import Messageboard_body_input from './Messageboard_body_input'
 
 function Messageboard_body() {
+
+  let currentChat = 'test';
+
   return (
     <Box className='all100'>
       <VStack divider={<StackDivider borderColor='gray.200' />} spacing={3} align='stretch' className='all100' >
