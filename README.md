@@ -25,7 +25,3 @@ Overall layout:
 Mobile friendly layout:
 
 ![Image_2](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_2.png?raw=true)
-
-Search-bar function
-
-![Image 3](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_1.png?raw=true)
