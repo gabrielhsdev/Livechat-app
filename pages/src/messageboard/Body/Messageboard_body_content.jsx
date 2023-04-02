@@ -50,7 +50,7 @@ function Messageboard_body_content(props) {
     <VStack className='all100'  align='stretch' p={3} spacing={4} >
           {messages != null 
             ? Object.keys(orderedMessages).map(messageIndex => <Messageboard_message status={orderedMessages[messageIndex].status} message={orderedMessages[messageIndex].message} />)
-            : <Messageboard_message key='1' status='right' message='No current messages in this convo' />
+            : <Text>Empty conversation</Text>
           }
           <div ref={messagesEndRef} />
     </VStack>

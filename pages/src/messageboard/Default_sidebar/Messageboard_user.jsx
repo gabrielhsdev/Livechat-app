@@ -17,7 +17,7 @@ function Messageboard_user(props) {
                     <Box> 
                         <Text fontSize='md'>{username}</Text>
                     </Box>
-                    <Box>
+                    <Box hidden>
                         <Text className='default_sidebar_contact_message'>{message}</Text>
                     </Box>
                 </VStack>

@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../firebase_connection/firebase_config_app' ;
 import { getDatabase, ref, onValue, update, on } from 'firebase/database';
 
 export function getMessages(recipient_id, currentUser, setChat) {

@@ -15,7 +15,7 @@ function Messageboard_body() {
 
   useEffect(() => {
     getMessages(selectedContact, currentUser, setChat);
-}, [selectedContact, currentUser, setChat]);
+  }, [selectedContact, currentUser, setChat]);
 
   //Update ou chat name
   useEffect(() => {
@@ -31,7 +31,7 @@ function Messageboard_body() {
       <VStack divider={<StackDivider borderColor='gray.200' />} spacing={3} align='stretch' className='all100' >
 
         <Box  h='5%' maxH='25%'>
-          <Messageboard_body_header recipientName={recipientName} />
+          <Messageboard_body_header recipientName={recipientName} chatReference={chat} />
         </Box >
 
         <Box  h='85%' display='flex' overflowY='auto'>
