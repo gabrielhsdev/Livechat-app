@@ -26,7 +26,7 @@ Mobile friendly layout:
 
 ![Image_2](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_2.png?raw=true)
 
-How to run ?
+<h3>How to run ?</h3>
 In order for this app to run locally, a new firebase project fire realtime database set-up is nescessary, after installing the NPM nescessary modules...
 
 1-) Add the firebase config inside a new folder created on the root called \firebase_connection
