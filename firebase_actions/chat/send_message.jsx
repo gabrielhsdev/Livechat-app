@@ -5,9 +5,9 @@ import { getDatabase, ref, onValue, set, update } from "firebase/database";
 
 export function sendMessage(chatReference, messageContent, userId) {
 
-    console.log('message sent');
+    //console.log('message sent');
     let randomId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    if(chatReference != null && messageContent != null && userId != null){
+    if(chatReference != null && messageContent != null && userId != null && messageContent.trim() != ""){
         const db = getDatabase();
         set(ref(db, 'chats/' + chatReference[1] + '/' + randomId), {
             from: userId,

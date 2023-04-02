@@ -1,28 +1,39 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 import { Flex, Box, Text, VStack } from '@chakra-ui/react'
+import { getMessages } from '../../../../firebase_actions/chat/get_messages';
 import Messageboard_message from './Messageboard_message'
-
-//Will change later
-const messages2 = [
-  {
-      id: 1,
-      message:'Test message text would go inside this div. This is a test message to see how the app reacts',
-      status:'right',
-  },
-  {
-      id: 2,
-      message:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      status:'left',
-  },
-];
+import { UserContext } from '../../../UserContext'
 
 function Messageboard_body_content(props) {
 
   let messages = null;
+  let orderedMessages = [];
   let chatContent = props.chatContent;
+  const { currentUser } = useContext(UserContext);
+  //console.log(chatContent);
 
   if(chatContent == null){
     messages = null;
+  }else{
+    messages = chatContent[2];
+    if (messages != null) {
+      orderedMessages = Object.keys(messages).map(message => {
+        //console.log(messages[message].message);
+        const newMessage = {
+          from: messages[message].from,
+          message: messages[message].message,
+          timestamp: messages[message].timestamp
+        };
+        if (currentUser != null && messages[message].from == currentUser.uid) {
+          newMessage.status = 'right';
+        } else {
+          newMessage.status = 'left';
+        }
+        return newMessage;
+      })
+      .sort((a, b) => a.timestamp - b.timestamp);
+      console.log(orderedMessages);
+    }
   }
 
   //Makes us scroll to the bottom of the message board
@@ -38,7 +49,7 @@ function Messageboard_body_content(props) {
   return (
     <VStack className='all100'  align='stretch' p={3} spacing={4} >
           {messages != null 
-            ? messages.map(message => <Messageboard_message key={message.id} status={message.status} message={message.message} />)
+            ? Object.keys(orderedMessages).map(messageIndex => <Messageboard_message status={orderedMessages[messageIndex].status} message={orderedMessages[messageIndex].message} />)
             : <Messageboard_message key='1' status='right' message='No current messages in this convo' />
           }
           <div ref={messagesEndRef} />

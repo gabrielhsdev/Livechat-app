@@ -1,35 +1,35 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../firebase_connection/firebase_config_app'
-import { getDatabase, ref, onValue, set, update } from "firebase/database";
+import { auth } from '../../firebase_connection/firebase_config_app' ;
+import { getDatabase, ref, onValue, update, on } from 'firebase/database';
 
-export function getMessages(recipient_id, currentUser) {
+export function getMessages(recipient_id, currentUser, setChat) {
     
     const db = getDatabase();
-    let currenConvo = null;
+    let currentConvo = null;
     let recipientName = null;
 
-    if(recipient_id != null && currentUser != null){
+    if (recipient_id != null && currentUser != null) {
 
         let chatRef = [recipient_id, currentUser.uid].sort().join('_');
-        //console.log(chatRef);
 
-        //First we check if convo exists
+        //Get recipient name
         const getRecipientName = ref(db, 'users/' + recipient_id);
         onValue(getRecipientName, (snapshot) => {
-            recipientName = snapshot.val();
+            recipientName = snapshot.val().username;
         });
-        recipientName = recipientName.username;
 
-        //First we check if convo exists
-        const starCountRef = ref(db, 'chats/' + chatRef);
+        //Get messages
+        const chatRefPath = 'chats/' + chatRef;
+        const starCountRef = ref(db, chatRefPath);
         onValue(starCountRef, (snapshot) => {
-          currenConvo = snapshot.val();
+            currentConvo = snapshot.val();
+            setChat([recipientName, chatRef, currentConvo]);
         });
         
         //Then we get the messages
-        return [recipientName, chatRef, currenConvo];
-
+        return [recipientName, chatRef, currentConvo];
     }
+
     return 'error recovering chat';
 }

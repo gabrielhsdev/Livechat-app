@@ -13,11 +13,9 @@ function Messageboard_body() {
   const { selectedContact, setSelectedContact } = useContext(UserContext);
   const { currentUser } = useContext(UserContext);
 
-  //Update our chat
   useEffect(() => {
-    //console.log("selectedContact changed: ", selectedContact);
-    setChat(getMessages(selectedContact, currentUser));
-  }, [selectedContact, currentUser]);
+    getMessages(selectedContact, currentUser, setChat);
+}, [selectedContact, currentUser, setChat]);
 
   //Update ou chat name
   useEffect(() => {
