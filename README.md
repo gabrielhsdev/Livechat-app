@@ -4,6 +4,8 @@ Check a 1 minute video here about the app here: https://www.youtube.com/watch?v=
 
 The Live chat web app is a real-time communication platform built using React.js, Next.js, and Chakra UI. It utilizes Firebase Realtime Database to store and manage the chat messages exchanged between users. The app also employs Firebase OAuth for user authentication and authorization, ensuring secure access to the chat platform. With this web app, users can seamlessly exchange messages with each other in real-time, making it an ideal platform for online collaboration and communication.
 
+Mobile-friendly design with responsive layout for seamless chat experience on any device !
+
 <b>Live chat web app using</b> 
 
         -React.js 
@@ -18,7 +20,7 @@ The Live chat web app is a real-time communication platform built using React.js
     
 ![First image](https://github.com/gabrielhsdev/Livechat-app/blob/main/ui.png?raw=true)
 
-![Image 2](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_1.png?token=GHSAT0AAAAAAB6VIQ6UGIMUH2GNLNBRIO5OZBJ6HQA)
+![Image_2](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_2.png?token=GHSAT0AAAAAAB6VIQ6U2ZROMGR6TVTFPUA2ZBJ6I7Q)
 
-![Image_3](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_2.png?token=GHSAT0AAAAAAB6VIQ6U2ZROMGR6TVTFPUA2ZBJ6I7Q)
+![Image 3](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_1.png?token=GHSAT0AAAAAAB6VIQ6UGIMUH2GNLNBRIO5OZBJ6HQA)
 
