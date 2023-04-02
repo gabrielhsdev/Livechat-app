@@ -20,7 +20,6 @@ Mobile-friendly design with responsive layout for seamless chat experience on an
     
 ![First image](https://github.com/gabrielhsdev/Livechat-app/blob/main/ui.png?raw=true)
 
-![Image_2](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_2.png?token=GHSAT0AAAAAAB6VIQ6U2ZROMGR6TVTFPUA2ZBJ6I7Q)
+![Image_2](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_2.png?raw=true)
 
-![Image 3](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_1.png?token=GHSAT0AAAAAAB6VIQ6UGIMUH2GNLNBRIO5OZBJ6HQA)
-
+![Image 3](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_1.png?raw=true)
