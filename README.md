@@ -29,7 +29,7 @@ Mobile friendly layout:
 <h3>How to run ?</h3>
 In order for this app to run locally, a new firebase project fire realtime database set-up is nescessary, after installing the NPM nescessary modules...
 
-1-) Add the firebase config inside a new folder created on the root called \firebase_connection
+1-) Create a new firebase project and add the firebase config inside a new folder created on the root called \firebase_connection
 
 2-) Inside the folder, paste the following code with your own credentials
 
