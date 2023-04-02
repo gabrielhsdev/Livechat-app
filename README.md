@@ -1,4 +1,4 @@
-<h4>Web chat app.</h4>
+<h2>Web chat app.</h2>
 
 Check a 1 minute video here about the app here: https://www.youtube.com/watch?v=gmD8x76sXa0&ab_channel=ElementalFlow21
 
