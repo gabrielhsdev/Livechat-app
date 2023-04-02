@@ -56,6 +56,5 @@ function writeUserData(userId, name, email, imageUrl) {
       email: email,
       profile_picture : imageUrl
     });
-    setDb(refDb(db, 'chats/' + userId), {});
-  }
+}
  

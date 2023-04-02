@@ -15,7 +15,12 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 
-function Messageboard_body_header() {
+function Messageboard_body_header(props) {
+  let recipientName = props.recipientName;
+  if(recipientName == 'e'){
+    recipientName = 'No Chat Selected';
+  }
+  //console.log(recipientName);
 
   //Check for mobile screens on grid
   const size = useWindowSize();    
@@ -31,7 +36,7 @@ function Messageboard_body_header() {
   return (
     <Flex className='all100' p={1}>
         <Box w='70%' h='100%' display='flex' alignItems='center'>
-            <Text fontWeight="bold">Chat name</Text>
+            <Text fontWeight="bold">{recipientName}</Text>
         </Box>
             <Spacer />
         <Box w='30%' h='100%' display='flex' alignItems='center' justifyContent='right'>

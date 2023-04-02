@@ -3,7 +3,7 @@ import { Flex, Box, Text, VStack } from '@chakra-ui/react'
 import Messageboard_message from './Messageboard_message'
 
 //Will change later
-const messages = [
+const messages2 = [
   {
       id: 1,
       message:'Test message text would go inside this div. This is a test message to see how the app reacts',
@@ -16,7 +16,14 @@ const messages = [
   },
 ];
 
-function Messageboard_body_content() {
+function Messageboard_body_content(props) {
+
+  let messages = null;
+  let chatContent = props.chatContent;
+
+  if(chatContent == null){
+    messages = null;
+  }
 
   //Makes us scroll to the bottom of the message board
   const messagesEndRef = useRef(null)
@@ -30,7 +37,10 @@ function Messageboard_body_content() {
 
   return (
     <VStack className='all100'  align='stretch' p={3} spacing={4} >
-          {messages.map(message => <Messageboard_message key={message.id} status={message.status} message={message.message} />)}
+          {messages != null 
+            ? messages.map(message => <Messageboard_message key={message.id} status={message.status} message={message.message} />)
+            : <Messageboard_message key='1' status='right' message='No current messages in this convo' />
+          }
           <div ref={messagesEndRef} />
     </VStack>
   )
