@@ -2,7 +2,7 @@ import { getDatabase, ref, onValue, get, on, set } from 'firebase/database';
 
 export function deleteMessages(chatReference){
 
-    if(chatReference != null && chatReference.trim() != ""){
+    if(chatReference != null){
         const db = getDatabase();
         let currentConvo = null;
         const chatRefPath = 'chats/' + chatReference;

@@ -13,7 +13,7 @@ function Messageboard_contacts() {
   
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { selectedContact, setSelectedContact, contactSearch } = useContext(UserContext);
+  const { selectedContact, setSelectedContact, contactSearch, currentUser} = useContext(UserContext);
   
   function handleSelectedContactUpdate(message) {
     // console.log('selectedContact: ', message);
@@ -22,10 +22,10 @@ function Messageboard_contacts() {
 
   useEffect(() => {
     const fetchContacts = async () => {
-      let contacts = await getContacts(contactSearch);
+      let contacts = null;
       while (!contacts) {
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait for 100 milliseconds
-        contacts = await getContacts(contactSearch);
+        await new Promise((resolve) => setTimeout(resolve, 100)); // wait for 100 milliseconds
+        contacts = await getContacts(contactSearch, currentUser);
       }
       setContacts(contacts);
       setLoading(false);
