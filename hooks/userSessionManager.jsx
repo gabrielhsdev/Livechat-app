@@ -9,6 +9,7 @@ export default function userSessionManager() {
     const [userData, setUserData] = useState(null);
     const [dataLoaded, setDataLoaded] = useState(false);
     const [selectedContact, setSelectedContact] = useState(null);
+    const [contactSearch, setContactSearch] = useState('');
 
     //Get main session stuff
     useEffect(() => {
@@ -34,5 +35,5 @@ export default function userSessionManager() {
 
     }
     //console.log(currentUser);
-    return { currentUser, userData, selectedContact, setSelectedContact };
+    return { currentUser, userData, selectedContact, setSelectedContact, contactSearch, setContactSearch };
 }

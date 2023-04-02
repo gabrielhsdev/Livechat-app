@@ -14,6 +14,7 @@ function Messageboard_body() {
   const { currentUser } = useContext(UserContext);
 
   useEffect(() => {
+    console.log('selectedContact: ', selectedContact);
     getMessages(selectedContact, currentUser, setChat);
   }, [selectedContact, currentUser, setChat]);
 

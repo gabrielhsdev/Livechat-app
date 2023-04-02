@@ -1,17 +1,26 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase_connection/firebase_config_app'
-import { getDatabase, ref, onValue } from "firebase/database";
+import { UserContext } from '../../pages/UserContext';
+import { getDatabase, ref, onValue, get } from "firebase/database";
 
-export async function getContacts(){
-
+export async function getContacts(contactSearchString){
     let contacts;
 
     const db = getDatabase();
-    const starCountRef = ref(db, 'users/');
-    onValue(starCountRef, (snapshot) => {
-        contacts = snapshot.val();
-    });
 
-    return contacts;    
+    const starCountRef = ref(db, 'users/');
+    const snapshot = await get(starCountRef);
+    contacts = snapshot.val();
+
+    const orderedContacts = Object.entries(contacts)
+    .sort((a, b) => {
+      const aScore = a[1].username.includes(contactSearchString) ? 1 : 0;
+      const bScore = b[1].username.includes(contactSearchString) ? 1 : 0;
+      return bScore - aScore;
+    })
+    .map(([key, value]) => ({ [key]: value }));
+    console.log(Object.assign({}, ...orderedContacts));
+    
+    return Object.assign({}, ...orderedContacts);
 }

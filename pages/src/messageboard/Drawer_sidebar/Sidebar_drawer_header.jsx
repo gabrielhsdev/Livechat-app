@@ -1,5 +1,6 @@
 import React from 'react'
 import { Flex, Box, VStack, Text, Button, Input} from '@chakra-ui/react'
+import Messageboard_searcher from '../Default_sidebar/Messageboard_searcher'
 
 function Sidebar_drawer_header() {
   return (
@@ -19,7 +20,7 @@ function Sidebar_drawer_header() {
             </Flex>
         </Box>
         <Box h='50px' >
-            <Input variant='filled' placeholder='Filled' size='sm' />
+            <Messageboard_searcher />
         </Box>
     </VStack>
   )
