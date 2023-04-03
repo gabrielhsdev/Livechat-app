@@ -47,13 +47,22 @@ function Messageboard_body_content(props) {
   //End of scroll to bottom
 
   return (
-    <VStack className='all100'  align='stretch' p={3} spacing={4} >
+
+    <div>
+    {currentUser ? (
+      <div>
+        <VStack className='all100'  align='stretch' p={3} spacing={4} >
           {messages != null 
             ? Object.keys(orderedMessages).map(messageIndex => <Messageboard_message key={messageIndex} status={orderedMessages[messageIndex].status} message={orderedMessages[messageIndex].message} />)
             : <Text>Empty conversation</Text>
           }
           <div ref={messagesEndRef} />
-    </VStack>
+        </VStack>
+      </div>
+    ) : (
+      <div>Loading...</div>
+    )}
+    </div>
   )
 }
 

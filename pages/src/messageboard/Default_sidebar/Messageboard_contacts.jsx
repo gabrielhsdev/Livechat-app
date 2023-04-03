@@ -16,7 +16,7 @@ function Messageboard_contacts() {
   const { setSelectedContact, contactSearch, currentUser} = useContext(UserContext);
   
   function handleSelectedContactUpdate(message) {
-    setSelectedContact(message);1
+    setSelectedContact(message);
   }
 
   useEffect(() => {

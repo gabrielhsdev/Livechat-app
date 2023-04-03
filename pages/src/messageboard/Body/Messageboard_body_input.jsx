@@ -17,12 +17,8 @@ function Messageboard_body_input(props) {
   }
 
   function handleSubmit() {
-    // console.log("submitted: " + messageText);
-
-    sendMessage(chatReference, messageText, currentUser.uid);
+    sendMessage(chatReference, messageText, currentUser?.uid);
     setMessageText("");
-    
-    
   }
 
   return (

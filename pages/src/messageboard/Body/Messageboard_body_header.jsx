@@ -40,14 +40,6 @@ function Messageboard_body_header(props) {
   //Check for mobile screens on grid
   const size = useWindowSize();    
 
-  //Drawer function
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
-
-  //Get context
-  const userState = useContext(UserContext);
-  let userData = userState.userData;
-
   return (
     <Flex className='all100' p={1}>
         <Box w='70%' h='100%' display='flex' alignItems='center'>

@@ -4,13 +4,13 @@ import { UserContext } from '../../../../context/UserContext'
 
 function Messageboard_searcher() {
 
-  const { setContactSearch, contactSearch } = useContext(UserContext);
+  const { setContactSearch } = useContext(UserContext);
 
   const handleSearchInputChange = (event) => {
-
-    if(event.target.value === '') setContactSearch(null);
+    if(event.target.value === ''){
+      setContactSearch(null);
+    }
     setContactSearch(event.target.value);
-  
   };
 
   return (
