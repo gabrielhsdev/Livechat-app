@@ -20,6 +20,8 @@ Mobile-friendly design with responsive layout for seamless chat experience on an
         
         -Firebase OAuth
         
+        -Vecel for deployment
+        
 Overall layout:
     
 ![First image](https://github.com/gabrielhsdev/Livechat-app/blob/main/ui.png?raw=true)
