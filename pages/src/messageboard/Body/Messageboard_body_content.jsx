@@ -49,7 +49,7 @@ function Messageboard_body_content(props) {
   return (
     <VStack className='all100'  align='stretch' p={3} spacing={4} >
           {messages != null 
-            ? Object.keys(orderedMessages).map(messageIndex => <Messageboard_message status={orderedMessages[messageIndex].status} message={orderedMessages[messageIndex].message} />)
+            ? Object.keys(orderedMessages).map(messageIndex => <Messageboard_message key={messageIndex} status={orderedMessages[messageIndex].status} message={orderedMessages[messageIndex].message} />)
             : <Text>Empty conversation</Text>
           }
           <div ref={messagesEndRef} />

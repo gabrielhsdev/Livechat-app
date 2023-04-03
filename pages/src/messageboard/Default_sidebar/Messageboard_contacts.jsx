@@ -37,8 +37,9 @@ function Messageboard_contacts() {
     <Box>
         <VStack spacing={1} align='stretch' >
           {Object.keys(contacts).map((message, index) => (
-            <Box onClick={() => handleSelectedContactUpdate(message)}>
+            <Box onClick={() => handleSelectedContactUpdate(message)} key={message}>
               <Messageboard_user
+                key={message}
                 username={capitalizeFirstLetter(contacts[message].username)}
                 messageTxt='{message}'
                 imgSource = {contacts[message].profile_picture}
