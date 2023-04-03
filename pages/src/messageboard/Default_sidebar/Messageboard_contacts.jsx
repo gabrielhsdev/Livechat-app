@@ -13,7 +13,7 @@ function Messageboard_contacts() {
   
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { setSelectedContact, contactSearch, currentUser} = useContext(UserContext);
+  const { setSelectedContact, contactSearch, currentUser} = useContext(UserContext) || {};
   
   function handleSelectedContactUpdate(message) {
     setSelectedContact(message);

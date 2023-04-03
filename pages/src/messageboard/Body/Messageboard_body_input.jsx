@@ -6,7 +6,7 @@ import {UserContext} from '../../../../context/UserContext'
 
 function Messageboard_body_input(props) {
 
-  const { currentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext) || {};
 
   const [messageText, setMessageText] = useState("");
   let chatReference = props.chatReference;
