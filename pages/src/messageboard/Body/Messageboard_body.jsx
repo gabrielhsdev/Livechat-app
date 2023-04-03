@@ -10,12 +10,14 @@ function Messageboard_body() {
 
   const [chat, setChat] = useState(null);
   const [recipientName, setRecipientName] = useState(null);
-  const { selectedContact, setSelectedContact, currentUser } = useContext(UserContext);
+  const { selectedContact, currentUser } = useContext(UserContext);
   
   useEffect(() => {
     if (selectedContact && currentUser) {
       console.log('selectedContact: ', selectedContact);
       getMessages(selectedContact, currentUser, setChat);
+    }else{
+      setChat(null);
     }
   }, [selectedContact, currentUser, setChat]);
 
