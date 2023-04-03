@@ -12,7 +12,7 @@ function Messageboard_body_content(props) {
   const { currentUser } = useContext(UserContext);
   if (!currentUser) {
     // return a loading indicator or do something else to handle the null currentUser
-    return <div>Loading...</div>;
+    chatContent = null;
   }
   //console.log(chatContent);
 
