@@ -10,6 +10,10 @@ function Messageboard_body_content(props) {
   let orderedMessages = [];
   let chatContent = props.chatContent;
   const { currentUser } = useContext(UserContext);
+  if (!currentUser) {
+    // return a loading indicator or do something else to handle the null currentUser
+    return <div>Loading...</div>;
+  }
   //console.log(chatContent);
 
   if(chatContent == null){
