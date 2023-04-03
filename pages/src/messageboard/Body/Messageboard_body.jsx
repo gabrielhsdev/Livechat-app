@@ -3,7 +3,7 @@ import { Flex, VStack, StackDivider, Box, Text} from '@chakra-ui/react'
 import Messageboard_body_header from './Messageboard_body_header'
 import Messageboard_body_content from './Messageboard_body_content'
 import Messageboard_body_input from './Messageboard_body_input'
-import { UserContext } from '../../../context/UserContext'
+import { UserContext } from '../../../../context/UserContext'
 import {getMessages} from '../../../../firebase_actions/chat/get_messages'
 
 function Messageboard_body() {

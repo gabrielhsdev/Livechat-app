@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { VStack, Box, StackDivider, Center } from '@chakra-ui/react'
 import Messageboard_user from './Messageboard_user'
 import {getContacts} from '../../../../firebase_actions/sidebar/getContacts'
-import { UserContext } from '../../../context/UserContext'
+import { UserContext } from '../../../../context/UserContext'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

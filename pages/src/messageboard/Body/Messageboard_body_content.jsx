@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext } from 'react'
 import { Flex, Box, Text, VStack } from '@chakra-ui/react'
 import { getMessages } from '../../../../firebase_actions/chat/get_messages';
 import Messageboard_message from './Messageboard_message'
-import { UserContext } from '../../../context/UserContext'
+import { UserContext } from '../../../../context/UserContext'
 
 function Messageboard_body_content(props) {
 

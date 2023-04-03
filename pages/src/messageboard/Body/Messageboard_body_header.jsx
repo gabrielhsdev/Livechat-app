@@ -2,7 +2,7 @@ import React,  {useContext} from 'react'
 import useWindowSize from '@/hooks/useWindowSizechatapp'
 import { Flex, Text, Box, Button, Spacer, useDisclosure, Input} from '@chakra-ui/react'
 import { PhoneIcon, DeleteIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { UserContext } from '../../../context/UserContext'
+import { UserContext } from '../../../../context/UserContext'
 import Sidebar_drawer from '../Drawer_sidebar/Sidebar_drawer'
 import { deleteMessages } from '../../../../firebase_actions/chat/delete_messages'
 

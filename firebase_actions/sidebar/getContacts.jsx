@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase_connection/firebase_config_app'
-import { UserContext } from '../../pages/context/UserContext';
+import { UserContext } from '../../context/UserContext';
 import { getDatabase, ref, onValue, get } from "firebase/database";
 
 export async function getContacts(contactSearchString, currentUser){

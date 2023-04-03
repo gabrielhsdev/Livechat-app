@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { Center, Input } from '@chakra-ui/react'
-import { UserContext } from '../../../context/UserContext'
+import { UserContext } from '../../../../context/UserContext'
 
 function Messageboard_searcher() {
 
