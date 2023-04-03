@@ -2,7 +2,7 @@
 
 Check a 1 minute video here about the app here: <a href="https://www.youtube.com/watch?v=gmD8x76sXa0&ab_channel=ElementalFlow21" target="_blank">YouTube - Link</a>
 
-The app is now deployed on vecel, you can check it out here: <a href="https://livechat-app-alpha.vercel.app/" target="_blank">Website - Link</a>
+The app is now deployed on vecel, you can check it out here:  [My App](https://livechat-app-alpha.vercel.app/){:target="_blank" rel="noopener"}
 
 The Live chat web app is a real-time communication platform built using React.js, Next.js, and Chakra UI. It utilizes Firebase Realtime Database to store and manage the chat messages exchanged between users. The app also employs Firebase OAuth for user authentication and authorization, ensuring secure access to the chat platform. With this web app, users can seamlessly exchange messages with each other in real-time, making it an ideal platform for online collaboration and communication.
 
