@@ -10,7 +10,7 @@ function Messageboard_user(props) {
     <Center h='60px'>
         <Flex className='default_sidebar_user_flex' >
             <Box h='100%'>
-                <Image className='default_sidebar_contact_img' src={imgSource} />
+                <Image className='default_sidebar_contact_img' src={imgSource} alt='profile picture'/>
             </Box>
             <Center w='70%' h='100%'>
                 <VStack spacing={0} align='stretch' w="100%" m={1} >

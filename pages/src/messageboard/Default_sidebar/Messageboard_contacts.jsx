@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { VStack, Box, StackDivider, Center } from '@chakra-ui/react'
 import Messageboard_user from './Messageboard_user'
 import {getContacts} from '../../../../firebase_actions/sidebar/getContacts'
-import { UserContext } from '../../../UserContext'
+import { UserContext } from '../../../context/UserContext'
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -13,11 +13,10 @@ function Messageboard_contacts() {
   
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { selectedContact, setSelectedContact, contactSearch, currentUser} = useContext(UserContext);
+  const { setSelectedContact, contactSearch, currentUser} = useContext(UserContext);
   
   function handleSelectedContactUpdate(message) {
-    // console.log('selectedContact: ', message);
-    setSelectedContact(message);
+    setSelectedContact(message);1
   }
 
   useEffect(() => {
@@ -31,7 +30,7 @@ function Messageboard_contacts() {
       setLoading(false);
     };
     fetchContacts();
-  }, [contactSearch]);
+  }, [contactSearch, currentUser]);
         
   return (
     <Box>

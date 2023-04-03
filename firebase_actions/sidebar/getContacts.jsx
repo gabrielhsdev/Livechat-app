@@ -1,11 +1,12 @@
 import { useState, useContext } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase_connection/firebase_config_app'
-import { UserContext } from '../../pages/UserContext';
+import { UserContext } from '../../pages/context/UserContext';
 import { getDatabase, ref, onValue, get } from "firebase/database";
 
 export async function getContacts(contactSearchString, currentUser){
     let contacts;
+    if(currentUser == null) return null;
     let currentUserRef = currentUser.uid;
 
     const db = getDatabase();

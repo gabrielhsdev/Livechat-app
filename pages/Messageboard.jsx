@@ -5,7 +5,7 @@ import useWindowSize from '../hooks/useWindowSize'
 import Messageboard_sidebar from './src/messageboard/Default_sidebar/Messageboard_sidebar';
 import Messageboard_body from './src/messageboard/Body/Messageboard_body';
 import userSessionManager from '../hooks/userSessionManager'
-import { UserContext } from './UserContext'
+import { UserContext } from './context/UserContext'
 
 export default function Messageboard() {
 

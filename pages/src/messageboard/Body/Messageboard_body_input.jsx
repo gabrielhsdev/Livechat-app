@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import { Text, Box, Flex, Input, Button, Spacer } from '@chakra-ui/react'
 import { ChevronRightIcon, AttachmentIcon } from '@chakra-ui/icons'
 import { sendMessage } from '../../../../firebase_actions/chat/send_message'
-import {UserContext} from '../../../UserContext'
+import {UserContext} from '../../../context/UserContext'
 
 function Messageboard_body_input(props) {
 
