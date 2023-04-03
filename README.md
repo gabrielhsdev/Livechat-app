@@ -1,6 +1,7 @@
 <h2>Web chat app.</h2>
 
 Check a 1 minute video here about the app here: https://www.youtube.com/watch?v=gmD8x76sXa0&ab_channel=ElementalFlow21
+The app is now deployed on vecel, you can check it out here ! https://livechat-jjoelqdha-gabrielhsdev.vercel.app/
 
 The Live chat web app is a real-time communication platform built using React.js, Next.js, and Chakra UI. It utilizes Firebase Realtime Database to store and manage the chat messages exchanged between users. The app also employs Firebase OAuth for user authentication and authorization, ensuring secure access to the chat platform. With this web app, users can seamlessly exchange messages with each other in real-time, making it an ideal platform for online collaboration and communication.
 
@@ -32,7 +33,7 @@ In order for this app to run locally, a new firebase project with realtime datab
 
 1-) Create a new firebase project and add the firebase config inside a new folder created on the root called \firebase_connection
 
-2-) Inside the folder, paste the following code with your own credentials
+2-) Inside the folder, paste the following code with your own credentials, or use envoirment variables for that matter
 
 ```
 // Import the functions you need from the SDKs you need
