@@ -17,10 +17,51 @@ Mobile-friendly design with responsive layout for seamless chat experience on an
         -Firebase Realtime DB
         
         -Firebase OAuth
+        
+Overall layout:
     
 ![First image](https://github.com/gabrielhsdev/Livechat-app/blob/main/ui.png?raw=true)
 
-![Image_2](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_2.png?token=GHSAT0AAAAAAB6VIQ6U2ZROMGR6TVTFPUA2ZBJ6I7Q)
+Mobile friendly layout:
 
-![Image 3](https://raw.githubusercontent.com/gabrielhsdev/Livechat-app/main/images/img_1.png?token=GHSAT0AAAAAAB6VIQ6UGIMUH2GNLNBRIO5OZBJ6HQA)
+![Image_2](https://github.com/gabrielhsdev/Livechat-app/blob/main/images/img_2.png?raw=true)
 
+<h3>How to run ?</h3>
+In order for this app to run locally, a new firebase project with realtime database is nescessary, after installing the NPM nescessary modules do the following:
+
+
+1-) Create a new firebase project and add the firebase config inside a new folder created on the root called \firebase_connection
+
+2-) Inside the folder, paste the following code with your own credentials
+
+```
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getDatabase } from "firebase/database";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
+};
+
+// Initialize Firebase
+export const app  = initializeApp(firebaseConfig);
+export const auth = getAuth();
+
+// Create a root reference, for images
+export const storage = getStorage();
+
+//Get database
+const database = getDatabase(app);
+```
+
+After that evererything should be good to go ! Create a new user by signing up and start chatting !
